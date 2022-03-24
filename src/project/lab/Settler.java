@@ -25,16 +25,21 @@ public class Settler {
 
     }
 
-    public void Mine(Asteroids asteroids) throws IOException {
-        Settler settler = new Settler();
-        UnitTest.methodTest("Settler.Mine()");
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        settler.CarryResource();
-        asteroids.removeresoure();
-        UnitTest.TestEnd("Settler.Mine()");
-    }
-
+     public void Mine(Asteroids a) throws IOException
+	 {
+		 Settler st= new Settler();
+		 UnitTest.methodTest(" Settler.Mine()");
+		 a.LocalResource();
+		 st.CarryResource();
+		 a.RemoveResources();
+		 UnitTest.TestEnd(" Settler.Mine()");
+	 }
+    public void DropResource(Resources r)
+	 {
+		 UnitTest.methodTest(" Settler.DropResource()");
+		 a.LocalResource();
+		 UnitTest.TestEnd(" Settler.DropResource()");
+	 }
     private ArrayList<String> CarryResource() {
         UnitTest.methodTest("Settler.CarryResource()");
         UnitTest.TestEnd("Settler.CarryResource()");
