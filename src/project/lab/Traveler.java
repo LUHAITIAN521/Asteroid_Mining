@@ -40,7 +40,7 @@ public class Traveler {
      public void ChangeAsteroid(Asteroids asteroids){
 
      }
-     public void useTP_Gate(t:Traveler){
+     public void useTP_Gate(Travel t){
          TP_GATE tp = new TP_GATE();
          Asteroids a = new Asteroids();
          Game g = new Game();
