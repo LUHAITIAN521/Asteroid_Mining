@@ -6,12 +6,13 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.lang.*;
 
-public class Settler {
+public class Settler extends Traveler {
     Sun sun = new Sun();
     Asteroids asteroids = new Asteroids();
     ArrayList<String> resources = new ArrayList<String>();
     TP_GATE tp_gate = new TP_GATE();
     Resource resource = new Resource();
+
 
     public void Build_space_station(){
 
@@ -22,22 +23,28 @@ public class Settler {
     }
 
     public void Drill(){
-
+        Settler settler = new Settler();
+        UnitTest.methodTest("Settler.Drill()");
+        settler.Travel(asteroids);
+        settler.GetAsteroid(asteroids);
+        settler.Drill();
+        asteroids.Getcore();
+        UnitTest.TestEnd("Settler.Drill()");
     }
 
      public void Mine(Asteroids a) throws IOException
 	 {
 		 Settler st= new Settler();
 		 UnitTest.methodTest(" Settler.Mine()");
-		 a.LocalResource();
+		 asteroids.LocalResource();
 		 st.CarryResource();
-		 a.RemoveResources();
+		 asteroids.RemoveResources();
 		 UnitTest.TestEnd(" Settler.Mine()");
 	 }
-    public void DropResource(Resources r)
+    public void DropResource(Resource r)
 	 {
 		 UnitTest.methodTest(" Settler.DropResource()");
-		 a.LocalResource();
+		 asteroids.LocalResource();
 		 UnitTest.TestEnd(" Settler.DropResource()");
 	 }
     private ArrayList<String> CarryResource() {

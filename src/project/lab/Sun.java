@@ -5,4 +5,12 @@ public class Sun {
         Sun sun = new Sun();
 
     }
+
+    public void AddAsteroids(){
+
+    }
+
+    public void RemoveAsteroids(){
+
+    }
 }
