@@ -1,5 +1,6 @@
 package project.lab;
 import  java.lang.*;
+import  java.io.*;
 public class UnitTest {
     public static void methodTest(String m){
         System.out.println(m+"test started");
@@ -13,9 +14,9 @@ public class UnitTest {
 		 	Game game = new Game();
 	        Robot robot = new Robot();
 	        Settler st= new Settler();
-	        Resources r= new Resources();
+	        Resource r= new Resource();
 	        Asteroids a= new Asteroids();
-	        TP_Gate tpg=new TP_Gate();
+	        TP_GATE tpg=new TP_GATE();
 	        Sun s=new Sun();
 	        String enter = "0";
 	        
@@ -62,11 +63,11 @@ public class UnitTest {
 	                 break;
 
 	                 case 3:
-	                 
+	                 st.Travel();
 	                 break;
 
 	                 case 4:
-	                 
+	                 st.Drill();
 	                 break;
 
 	                 case 5:
@@ -78,7 +79,7 @@ public class UnitTest {
 	                 break;
 
 	                 case 7:
-	                 
+	                 a.CheckClosestToSun();
 	                 break;
 
 	                 case 8:

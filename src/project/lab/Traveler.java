@@ -1,7 +1,10 @@
 package project.lab;
 
 public class Traveler {
-
+    Sun sun = new Sun();
+    TP_GATE tp = new TP_GATE();
+    Asteroids a = new Asteroids();
+    Game g = new Game();
     public void Travel(){
 
 
@@ -19,10 +22,10 @@ public class Traveler {
      }
 
      public void Avoidance(){
-         createstorm();
-         Asteroids a = new Asteroids();
-         if(a.checkhollow=1){//check whether the core of asteroid is hollow
-            a.Getcore();//find the core of Asteroids to hide from sunstorm
+         sun.createstorm();
+         Asteroids asteroids = new Asteroids();
+         if(asteroids.checkhollow(asteroids)==1){//check whether the core of asteroid is hollow
+            asteroids.Getcore();//find the core of Asteroids to hide from sunstorm
          }
          else{
              die();
@@ -40,14 +43,12 @@ public class Traveler {
      public void ChangeAsteroid(Asteroids asteroids){
 
      }
-     public void useTP_Gate(Travel t){
-         TP_GATE tp = new TP_GATE();
-         Asteroids a = new Asteroids();
-         Game g = new Game();
-         GetAsteroid();
+     public void useTP_Gate(Traveler traveler){
+
+         GetAsteroid(new Asteroids());
          tp.paired();
          Travel();
-         a.RemoverTraveler();
+         a.RemoverTraveler(traveler);
          g.AddTraveler();
 
      }

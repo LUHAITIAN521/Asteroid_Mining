@@ -55,22 +55,35 @@ public class Asteroids implements Neighbors{
         Uranium uranium = new Uranium() ;
         Settler settler = new Settler();
         UnitTest.methodTest("perihelion");
-        while(closetosun==true){
+        while(closetosun){
             asteroids.localresource();
+            System.out.println("local resource()");
             uranium.UnderTheSun(asteroids);
+            System.out.println("UnderTheSun()");
             asteroids.RemoveResources();
+            System.out.println("RemoveResources()");
             asteroids.explode();
+            System.out.println("explode()");
             settler.HitByExplode();
+            System.out.println("HitByExplode()");
             settler.die();
+            System.out.println("die()");
             asteroids.RemoverTraveler(settler);
+            System.out.println("RemoverTraveler()");
             sun.RemoveAsteroids();
+            System.out.println("RemoveAsteroids()");
         }
         UnitTest.TestEnd("perihelion");
     }
 
-    private void RemoverTraveler(Settler settler) {
+    public void RemoverTraveler(Traveler traveler) {
     }
-    public int checkhollow(Asteroids a){
+    public int checkhollow(Asteroids asteroids){
       return 1;
+    }
+
+    @Override
+    public void TransferTraveler() {
+
     }
 }
