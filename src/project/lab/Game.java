@@ -55,4 +55,11 @@ public class Game {
   public void InitialPosition(){
     Sun sun = new Sun();
   }
+  public void AddRobot(){
+	  Robot robot = new Robot();
+  }
+  public void AddTraveler(){
+	  
+  }
+
 }

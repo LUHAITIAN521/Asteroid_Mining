@@ -16,10 +16,13 @@ public class Settler extends Traveler {
 
     public void Build_space_station(){
 
+
     }
 
     public void Build_robot(){
-
+        Settler s = new Settler();
+        s.checkresource();//to check whether the resources  for building robots are adequate
+        Game.AddRobot();
     }
 
     public void Drill(){
@@ -52,5 +55,27 @@ public class Settler extends Traveler {
         UnitTest.TestEnd("Settler.CarryResource()");
         return resources;
     }
+    public void checkresource(){
+
+    }
+    public void Build_TP_Gate(){
+        TP_GATE tp = new TP_GATE();
+        checkresource();//check wether the resources for building TP_Gates are enough.
+        tp.paired();// two TP_Gates consist of a pair, TP_Gates must be used in pairs to transfer travelers.
+
+    }
+    public void place_TP_Gate(){
+        TP_GATE tp = new TP_GATE();
+        Asteroids a = new Asteroids();
+        tp.paired();
+        a.GetNeighbor();//settlers move to the neighboring asteroid with a TP_Gate.
+        AddNeighbor();
+
+    }
+    public void AddNeighbor(){
+
+    }
+    
+
 
 }

@@ -70,4 +70,7 @@ public class Asteroids implements Neighbors{
 
     private void RemoverTraveler(Settler settler) {
     }
+    public int checkhollow(a:Asteroids){
+      return 1;
+    }
 }
