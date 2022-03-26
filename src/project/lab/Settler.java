@@ -11,6 +11,7 @@ public class Settler extends Traveler {
     Asteroids asteroids = new Asteroids();
     ArrayList<String> resources = new ArrayList<String>();
     TP_GATE tp_gate = new TP_GATE();
+    TP_GATE tp_gate2 = new TP_GATE();
     Resource resource = new Resource();
     Game game = new Game();
 
@@ -21,40 +22,10 @@ public class Settler extends Traveler {
 
     }
 
-    public void Travel(){
-        Settler settler = new Settler();
-        UnitTest.methodTest("Settler Travel()");
-        settler.GetAsteroid(asteroids);
-        System.out.println("GetAsteroid()");
-        asteroids.GetNeighbor();
-        System.out.println("GetNeighbor");
-        asteroids.TransferTraveler();
-        System.out.println("TransferTraveler");
-        asteroids.RemoverTraveler(settler);
-        System.out.println("RemoveTraveler");
-        game.AddTraveler();
-        System.out.println("AddTraveler()");
-        UnitTest.TestEnd("Settler Travel()");
-    }
-
     public void Build_robot(){
         Settler s = new Settler();
         s.checkresource();//to check whether the resources  for building robots are adequate
         game.AddRobot();
-    }
-
-    public void Drill(){
-        Settler settler = new Settler();
-        UnitTest.methodTest("Settler.Drill()");
-        settler.Travel();
-        System.out.println("Travel()");
-        settler.GetAsteroid(asteroids);
-        System.out.println("GetAsteroid()");
-        settler.Drill();
-        System.out.println("Drill()");
-        asteroids.Getcore();
-        System.out.println("Get core()");
-        UnitTest.TestEnd("Settler.Drill()");
     }
 
      public void Mine(Asteroids a) throws IOException
@@ -78,21 +49,26 @@ public class Settler extends Traveler {
         return resources;
     }
     public void checkresource(){
-
+    	
     }
     public void Build_TP_Gate(){
         checkresource();//check wether the resources for building TP_Gates are enough.
-        tp_gate.paired();// two TP_Gates consist of a pair, TP_Gates must be used in pairs to transfer travelers.
+        TP_GATE t1=new TP_GATE();//create the first gate
+        TP_GATE t2=new TP_GATE();//create the second gate
+        
+        t1.paired(t2);// two TP_Gates consist of a pair, TP_Gates must be used in pairs to transfer travelers.
 
     }
     public void place_TP_Gate(){
-        tp_gate.paired();
+    	tp_gate.paired(tp_gate2);//build the connection between two gates
         asteroids.GetNeighbor();//settlers move to the neighboring asteroid with a TP_Gate.
         AddNeighbor();
     }
     public void AddNeighbor(){
-
+    	
     }
+    
+    
     
 
 

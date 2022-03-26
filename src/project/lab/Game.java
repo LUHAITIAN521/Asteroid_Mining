@@ -8,6 +8,10 @@ public class Game {
 
 
   public void enggame(){
+	  UnitTest.methodTest("Game.endgame()");
+	  //The game end
+	  System.out.println("You lost game");
+	  UnitTest.TestEnd("Game.endgame()");
   }
 
   public void Initial() throws IOException
@@ -60,6 +64,20 @@ public class Game {
   }
   public void AddTraveler(){
 	  
+  }
+  
+  public void RemoveRobot(Robot r) {
+	  UnitTest.methodTest("Game.RemoveRobot()");
+	  //remove the robot from the map
+	  System.out.println("The robot is removed from the map");
+	  UnitTest.TestEnd("Game.RemoveRobot()");
+  }
+  
+  public void RemoveSettler(Settler s) {
+	  UnitTest.methodTest("Game.ReomveSettler");
+	  //remove the settler from the map
+	  System.out.println("The settler is removed from the map");
+	  UnitTest.TestEnd("Game.ReomveSettler");
   }
 
 }

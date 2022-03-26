@@ -1,5 +1,9 @@
 package project.lab;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Asteroids implements Neighbors{
     private int depth;
     private boolean closetosun;
@@ -25,19 +29,23 @@ public class Asteroids implements Neighbors{
     }
 
     public Resource Getcore(){
-        return new Resource();
+        UnitTest.methodTest("Asteroid.Getcore()");
+        UnitTest.TestEnd("Asteroid.Getcore()");
+    	return new Resource();
     }
 
     public void GetNeighbor(){
-
+    	
     }
 
     public void RemoveResources(){
-
+    	UnitTest.methodTest("RemoveResource()");
     }
 
     public void explode(){
-
+    	UnitTest.methodTest("explosion");
+    	RemoveResources();
+    	
     }
     
     public void LocalResource(){
@@ -80,8 +88,14 @@ public class Asteroids implements Neighbors{
 
     public void RemoverTraveler(Traveler traveler) {
     }
-    public int checkhollow(Asteroids asteroids){
-      return 1;
+    public int checkhollow(Asteroids asteroids) throws IOException{
+    	System.out.println("Check hide or not hide(Yes/No)");
+    	BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+     	String input = r.readLine();
+     	if(input.equals("Yes")) {
+     		return 1;
+     	}else {return 2;}
+    	
     }
 
     @Override

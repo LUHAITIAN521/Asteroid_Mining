@@ -1,7 +1,7 @@
 package project.lab;
 
 public class TP_GATE {
-    public void paired(){
-
+    public void paired(TP_GATE t){
+    	UnitTest.methodTest("gate paried()");
     }
 }

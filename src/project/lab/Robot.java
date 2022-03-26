@@ -19,7 +19,7 @@ public void TransferTraveler(){
 public void RobotDrill(){
 
     t.GetAsteroid(a);
-    t.Drill();
+    //t.Drill();
     a.Getcore();
 }
 }

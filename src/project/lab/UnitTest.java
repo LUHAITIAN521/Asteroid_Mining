@@ -83,12 +83,12 @@ public class UnitTest {
 	                 break;
 
 	                 case 8:
-	                
+	                	 st.Avoidance();
 	                 
 	                 break;
 
 	                 case 9:
-	                 
+	                	 robot.Avoidance();
 	                 break;
 
 	                 case 10:
@@ -100,7 +100,7 @@ public class UnitTest {
 	                 break;
 
 	                 case 12:
-	                 
+	                 robot.Drill();
 	                 break;
 
 	                 case 13:
