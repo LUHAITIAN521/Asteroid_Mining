@@ -13,7 +13,7 @@ public class Settler extends Traveler {
     TP_GATE tp_gate = new TP_GATE();
     Resource resource = new Resource();
     Game game = new Game();
-    Settler settler = new Settler();
+
     Asteroids asteroids2 = new Asteroids();
 
     public void Build_space_station(){
@@ -22,6 +22,7 @@ public class Settler extends Traveler {
     }
 
     public void Travel(){
+        Settler settler = new Settler();
         UnitTest.methodTest("Settler Travel()");
         settler.GetAsteroid(asteroids);
         System.out.println("GetAsteroid()");
@@ -43,6 +44,7 @@ public class Settler extends Traveler {
     }
 
     public void Drill(){
+        Settler settler = new Settler();
         UnitTest.methodTest("Settler.Drill()");
         settler.Travel();
         System.out.println("Travel()");
@@ -57,6 +59,7 @@ public class Settler extends Traveler {
 
      public void Mine(Asteroids a) throws IOException
 	 {
+         Settler settler = new Settler();
 		 UnitTest.methodTest(" Settler.Mine()");
 		 asteroids.LocalResource();
 		 settler.CarryResource();

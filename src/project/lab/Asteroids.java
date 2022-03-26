@@ -3,10 +3,11 @@ package project.lab;
 public class Asteroids implements Neighbors{
     private int depth;
     private boolean closetosun;
-    Asteroids asteroids;
-    Resource resource;
+
+    Resource resource = new Resource();
     Sun sun;
-    
+
+
     public Asteroids() {
 
     }
@@ -54,6 +55,7 @@ public class Asteroids implements Neighbors{
     public void CheckClosestToSun(){
         Uranium uranium = new Uranium() ;
         Settler settler = new Settler();
+        Asteroids asteroids = new Asteroids();
         UnitTest.methodTest("perihelion");
         while(closetosun){
             asteroids.localresource();

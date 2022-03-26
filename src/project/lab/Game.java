@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Game {
-  Settler settler = new Settler();
+
 
   public void enggame(){
   }
