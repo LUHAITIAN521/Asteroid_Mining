@@ -34,6 +34,7 @@ public class Game {
         }
         else 
         System.out.println("Invaild choose");
+        
 	}
 	public void SinglePlayer()
 	{
@@ -56,14 +57,19 @@ public class Game {
 		UnitTest.TestEnd(" Settler.MultiplePlayer()");
 	}
 
-  public void InitialPosition(){
+  public void InitialPosition(Settler s){
     Sun sun = new Sun();
+    UnitTest.methodTest("set position");
+	AddSettler(s);
+	
+	UnitTest.TestEnd("set position");
+	
   }
   public void AddRobot(){
 	  Robot robot = new Robot();
   }
-  public void AddTraveler(){
-	  
+  public void AddSettler(Settler s){
+	  UnitTest.methodTest("add settler");
   }
   
   public void RemoveRobot(Robot r) {
