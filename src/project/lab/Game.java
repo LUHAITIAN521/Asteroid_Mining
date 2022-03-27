@@ -60,7 +60,7 @@ public class Game {
   public void InitialPosition(Settler s){
     Sun sun = new Sun();
     UnitTest.methodTest("set position");
-	AddSettler(s);
+	AddTraveler(s);
 	
 	UnitTest.TestEnd("set position");
 	
@@ -68,7 +68,7 @@ public class Game {
   public void AddRobot(){
 	  Robot robot = new Robot();
   }
-  public void AddSettler(Settler s){
+  public void AddTraveler(Traveler s){
 	  UnitTest.methodTest("add settler");
   }
   

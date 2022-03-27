@@ -23,7 +23,7 @@ public class Traveler {
         System.out.println("TransferTraveler");
         a.RemoverTraveler(settler);
         System.out.println("RemoveTraveler");
-        g.AddTraveler();
+        g.AddTraveler(settler);
         System.out.println("AddTraveler()");
         UnitTest.TestEnd("Settler Travel()");
 
@@ -114,7 +114,7 @@ public class Traveler {
          tp.paired(tp2);
          Travel();
          a.RemoverTraveler(traveler);
-         g.AddTraveler();
+         g.AddTraveler(traveler);
 
      }
 
