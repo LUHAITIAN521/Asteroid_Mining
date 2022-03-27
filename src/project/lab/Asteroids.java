@@ -67,9 +67,9 @@ public class Asteroids implements Neighbors{
         System.out.println("If asteroid is closes to sun(Y/N)?");
         String input;
         BufferedReader r1 = new BufferedReader(new InputStreamReader(System.in));
-        input = r1.readLine();
+        input = r1.readLine();//User input
         if (input.equals("Y")){
-            System.out.println("If asteroid has uranium or water ice or something else(u/w/s)?");
+            System.out.println("If asteroid has uranium or water ice or something else(u/w/s)?");//choose resource types
             input = r1.readLine();
             asteroids.setClosetosun();
             if(input.equals("u")){

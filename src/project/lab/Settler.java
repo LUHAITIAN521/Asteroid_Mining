@@ -70,8 +70,26 @@ public class Settler extends Traveler {
     public void AddNeighbor(){
     	
     }
-    
-    
+
+    public void die(){
+        UnitTest.methodTest("Settler.Die()");//method for the travel die
+        g.enggame();//Game over.
+    }
+
+    public void Avoidance() throws IOException{
+        sun.createstorm();
+        Asteroids asteroids = new Asteroids();
+        if(asteroids.checkhollow(asteroids)==1){//check whether the core of asteroid is hollow
+            asteroids.Getcore();//find the core of Asteroids to hide from sun storm
+            System.out.println("Settler hide successfully");
+        }
+        else{
+            //if()
+            die();
+            System.out.println("failed, traveller die");
+
+        }
+    }
     
 
 

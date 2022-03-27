@@ -35,8 +35,8 @@ public class UnitTest {
 	             System.out.println("5:settler mine");
 	             System.out.println("6:settler put resource down");
 	             System.out.println("7:perihelion");
-	             System.out.println("8:sun-wind occurs(Not hidden)");
-	             System.out.println("9:sun-wind occurs(hidden)");
+	             System.out.println("8:sun-wind occurs(settler Avoidance)");
+	             System.out.println("9:sun-wind occurs(Robot Avoidance)");
 	             System.out.println("10:robot is created");
 	             System.out.println("11:Robot moves");
 	             System.out.println("12:Robot drill");

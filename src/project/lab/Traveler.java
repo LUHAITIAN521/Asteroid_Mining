@@ -73,8 +73,7 @@ public class Traveler {
     }
 
     public void die(){
-    	UnitTest.methodTest("Settler.Die()");//method for the travel die
-    	
+
     }
      public void HitByExplode(){
     	 UnitTest.methodTest("HitByExplode()");
@@ -82,16 +81,6 @@ public class Traveler {
      }
 
      public void Avoidance() throws IOException{
-         sun.createstorm();
-         Asteroids asteroids = new Asteroids();
-         if(asteroids.checkhollow(asteroids)==1){//check whether the core of asteroid is hollow
-            asteroids.Getcore();//find the core of Asteroids to hide from sunstorm
-            System.out.println("hide successfully");
-         }
-         else{
-             die();
-             System.out.println("failed, traveller die");
-         }
     }
 
      public void GetAsteroid(Asteroids asteroids){
