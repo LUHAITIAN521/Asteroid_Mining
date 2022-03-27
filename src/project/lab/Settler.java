@@ -31,16 +31,18 @@ public class Settler extends Traveler {
      public void Mine(Asteroids a) throws IOException
 	 {
          Settler settler = new Settler();
+         Resource resource=new Resource();
 		 UnitTest.methodTest(" Settler.Mine()");
-		 asteroids.LocalResource();
+		 asteroids.LocalResource(resource);
 		 settler.CarryResource();
 		 asteroids.RemoveResources();
 		 UnitTest.TestEnd(" Settler.Mine()");
 	 }
     public void DropResource(Resource r)
 	 {
+         Resource resource = new Resource();
 		 UnitTest.methodTest(" Settler.DropResource()");
-		 asteroids.LocalResource();
+		 asteroids.LocalResource(resource);
 		 UnitTest.TestEnd(" Settler.DropResource()");
 	 }
     private ArrayList<String> CarryResource() {
@@ -55,11 +57,12 @@ public class Settler extends Traveler {
         checkresource();//check wether the resources for building TP_Gates are enough.
         TP_GATE t1=new TP_GATE();//create the first gate
         TP_GATE t2=new TP_GATE();//create the second gate
-        
+        UnitTest.methodTest("Build_TP_Gate");
         t1.paired(t2);// two TP_Gates consist of a pair, TP_Gates must be used in pairs to transfer travelers.
 
     }
     public void place_TP_Gate(){
+        UnitTest.methodTest("place_TP_Gate");
     	tp_gate.paired(tp_gate2);//build the connection between two gates
         asteroids.GetNeighbor();//settlers move to the neighboring asteroid with a TP_Gate.
         AddNeighbor();

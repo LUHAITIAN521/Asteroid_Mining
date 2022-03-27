@@ -5,4 +5,4 @@ public class WaterIce extends Resource{
     	System.out.println("Waterice close to the sun");
     	asteroids.RemoveResources();
 }
-	}
+}

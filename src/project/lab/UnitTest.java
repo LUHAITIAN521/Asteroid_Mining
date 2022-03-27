@@ -59,7 +59,7 @@ public class UnitTest {
 	                 break;
 
 	                 case 2:
-	                 
+	                 game.InitialPosition(st);
 	                 break;
 
 	                 case 3:
@@ -92,11 +92,11 @@ public class UnitTest {
 	                 break;
 
 	                 case 10:
-	                
+	                 st.Build_robot();
 	                 break;
 
 	                 case 11:
-	                
+	                	robot.Travel();
 	                 break;
 
 	                 case 12:
@@ -104,15 +104,15 @@ public class UnitTest {
 	                 break;
 
 	                 case 13:
-	                 
+	                 st.Build_TP_Gate();
 	                 break;
 
 	                 case 14:
-	                 
+	                 st.place_TP_Gate();
 	                 break;
 
 	                 case 15:
-	                 
+	                 st.useTP_Gate(st);
 	                 break;
 	                 
 	                 default:

@@ -9,24 +9,22 @@ public class Traveler {
     TP_GATE tp = new TP_GATE();
     TP_GATE tp2 = new TP_GATE();
     Asteroids a = new Asteroids();
+    Asteroids a2 = new Asteroids();
     Resource r= new Resource();
     Game g = new Game();
     
     public void Travel(){
-    	Settler settler = new Settler();
-        UnitTest.methodTest("Settler Travel()");
-        settler.GetAsteroid(a);
+    	Traveler traveler= new Traveler();
+        traveler.GetAsteroid(a);
         System.out.println("GetAsteroid()");
         a.GetNeighbor();
-        System.out.println("GetNeighbor");
+        System.out.println("GetNeighbor()");
         a.TransferTraveler();
-        System.out.println("TransferTraveler");
-        a.RemoverTraveler(settler);
-        System.out.println("RemoveTraveler");
-        g.AddTraveler(settler);
-        System.out.println("AddTraveler()");
-        UnitTest.TestEnd("Settler Travel()");
-
+        System.out.println("TransferTraveler()");
+        a.RemoverTraveler(traveler);
+        System.out.println("RemoveTraveler()");
+        g.AddTraveler(traveler);
+        System.out.println("AddTraveler() to new asteroid");
     }
     
     //the class is for both robot and settler
@@ -94,15 +92,11 @@ public class Traveler {
              die();
              System.out.println("failed, traveller die");
          }
-
-        
-         
-
-     }
+    }
 
      public void GetAsteroid(Asteroids asteroids){
-    	 UnitTest.methodTest("Asteroids.GetAsteroid()");
-    	 UnitTest.TestEnd("Asteroids.GetAsteroid()");
+    	 UnitTest.methodTest("Traveler.GetAsteroid()");
+    	 UnitTest.TestEnd("Traveler.GetAsteroid()");
      }
 
      public void ChangeAsteroid(Asteroids asteroids){
@@ -115,7 +109,5 @@ public class Traveler {
          Travel();
          a.RemoverTraveler(traveler);
          g.AddTraveler(traveler);
-
-     }
-
+    }
 }

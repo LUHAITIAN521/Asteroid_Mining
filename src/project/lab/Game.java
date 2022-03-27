@@ -67,6 +67,7 @@ public class Game {
   }
   public void AddRobot(){
 	  Robot robot = new Robot();
+	  UnitTest.methodTest("Add new robot");
   }
   public void AddTraveler(Traveler s){
 	  UnitTest.methodTest("add settler");
@@ -86,4 +87,6 @@ public class Game {
 	  UnitTest.TestEnd("Game.ReomveSettler");
   }
 
+	public void AddTraveler() {
+	}
 }

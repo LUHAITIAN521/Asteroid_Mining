@@ -9,11 +9,14 @@ public class Asteroids implements Neighbors{
     private boolean closetosun;
 
     Resource resource = new Resource();
-    Sun sun;
+    Sun sun = new Sun();
 
 
     public Asteroids() {
 
+    }
+    public void setClosetosun(){
+        closetosun=true;
     }
 
     public  void createcore(){
@@ -22,10 +25,6 @@ public class Asteroids implements Neighbors{
 
     public Resource createresource(){
         return new Resource() ;
-    }
-
-    public void localresource(){
-
     }
 
     public Resource Getcore(){
@@ -48,7 +47,7 @@ public class Asteroids implements Neighbors{
     	
     }
     
-    public void LocalResource(){
+    public void LocalResource(Resource resource){
         
     }
 
@@ -60,30 +59,42 @@ public class Asteroids implements Neighbors{
 
     }
 
-    public void CheckClosestToSun(){
+    public void CheckClosestToSun() throws IOException {
         Uranium uranium = new Uranium() ;
         Settler settler = new Settler();
         Asteroids asteroids = new Asteroids();
-        UnitTest.methodTest("perihelion");
-        while(closetosun){
-            asteroids.localresource();
-            System.out.println("local resource()");
-            uranium.UnderTheSun(asteroids);
-            System.out.println("UnderTheSun()");
-            asteroids.RemoveResources();
-            System.out.println("RemoveResources()");
-            asteroids.explode();
-            System.out.println("explode()");
-            settler.HitByExplode();
-            System.out.println("HitByExplode()");
-            settler.die();
-            System.out.println("die()");
-            asteroids.RemoverTraveler(settler);
-            System.out.println("RemoverTraveler()");
-            sun.RemoveAsteroids();
-            System.out.println("RemoveAsteroids()");
+        WaterIce waterIce = new WaterIce();
+        System.out.println("If asteroid is closes to sun(Y/N)?");
+        String input;
+        BufferedReader r1 = new BufferedReader(new InputStreamReader(System.in));
+        input = r1.readLine();
+        if (input.equals("Y")){
+            System.out.println("If asteroid has uranium or water ice or something else(u/w/s)?");
+            input = r1.readLine();
+            asteroids.setClosetosun();
+            if(input.equals("u")){
+                System.out.println("The asteroid is close to sun");
+                asteroids.LocalResource(uranium);//check what kind of resource currently on the asteroid.here is uranium
+                System.out.println("Check the current resource is uranium");
+                uranium.UnderTheSun(asteroids);
+                asteroids.explode();//the asteroid exploded
+                System.out.println("asteroid is exploded");
+                sun.RemoveAsteroids();//the exploded asteroid will disappear.
+                System.out.println("Remove it from the game field");
+            }
+            else if (input.equals("w")){
+                asteroids.LocalResource(waterIce);
+                waterIce.UnderTheSun(asteroids);
+                System.out.println("Remove water ice from the asteroid");
+            }
+            else if (input.equals("s")){
+                System.out.println("Nothing happen");
+            }
+            else {System.out.println("Error enter!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");}
         }
-        UnitTest.TestEnd("perihelion");
+        else{
+            System.out.println("Nothing happen");
+        }
     }
 
     public void RemoverTraveler(Traveler traveler) {
@@ -100,6 +111,16 @@ public class Asteroids implements Neighbors{
 
     @Override
     public void TransferTraveler() {
+
+    }
+
+    @Override
+    public void AddNeighbor() {
+
+    }
+
+    @Override
+    public void RemoveNeighbor() {
 
     }
 }
