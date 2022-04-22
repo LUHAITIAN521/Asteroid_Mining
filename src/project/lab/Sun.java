@@ -27,10 +27,14 @@ public class Sun {
         
 	}
     
-    public void createstorm(){
+       public void createstorm()
+       {
         Sun sun = new Sun();
-    }
-
+       }
+	public void GetAsteroid(ArrayList<Asteroids> a)
+	{
+		this.Asteroid=a;
+	}
 
     public void RemoveAsteroids(){
 
