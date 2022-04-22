@@ -6,15 +6,15 @@ import java.io.InputStreamReader;
 
 public class Asteroids implements Neighbors{
     private int depth;
-    private boolean closetosun;
-
+    private boolean closetosun=false;
+    String aID;
+	Asteroids(String ID)
+	{
+		aID=ID;
+	}
     Resource resource = new Resource();
     Sun sun = new Sun();
 
-
-    public Asteroids() {
-
-    }
     public void setClosetosun(){
         closetosun=true;
     }
