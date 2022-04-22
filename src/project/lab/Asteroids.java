@@ -8,10 +8,22 @@ public class Asteroids implements Neighbors{
     private int depth;
     private boolean closetosun=false;
     String aID;
-	Asteroids(String ID)
+Asteroids(String ID)
 	{
 		aID=ID;
 	}
+public void setdepth() 
+	{
+        	depth = new Random().nextInt(15);
+        	if(depth<5)
+        	{
+        		depth = 5;
+        	}
+        }
+public int getdepth() 
+	{
+        	return depth;
+        }
     Resource resource = new Resource();
     Sun sun = new Sun();
 
