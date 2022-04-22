@@ -15,22 +15,33 @@ public class Game {
   public void Initial() throws IOException
 	{
 		String enter;
-		System.out.println("Please choose play mode:");
-        System.out.println("1:SinglePlayer");
-        System.out.println("2.MultiplePlayer");
-        
+	       
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("0.Exit Game;1. Start Game");
         enter = br.readLine();
         int num = Integer.parseInt(enter);
-        if(num==1)
+        if(num==0)
         {
-            SinglePlayer();
+        	System.exit(0);
         }
-        else if(num==2){
-            MultiplePlayer();
+        else if(num==1)
+        {
+        	System.out.println("1.SinglePlay;2.MutiplePlay");
+        	enter = br.readLine();
+            num = Integer.parseInt(enter);
+            if(num==1)
+            {
+                SinglePlayer();
+            }
+            else if(num==2)
+            {
+                MultiplePlayer();
+            }
+            else 
+            System.out.println("Wrong enter");
         }
         else 
-        System.out.println("Invaild choose");
+        System.out.println("Wrong enter");
         
 	}
 	public void SinglePlayer()
