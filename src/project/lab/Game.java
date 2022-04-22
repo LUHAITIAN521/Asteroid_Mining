@@ -12,7 +12,7 @@ public class Game {
 	  System.out.println("You lost game");
   }
 
-  public void Initial() throws IOException
+  public void Initial() throws IOException //8.2.1 test
 	{
 		String enter;
 	       
