@@ -2,8 +2,14 @@ package project.lab;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.io.BufferedReader;
+
+
 public class Sun {
     public ArrayList<Asteroids> Asteroid = new ArrayList<Asteroids>();
+    public ArrayList<Robot> rlist = new ArrayList<Robot>();
+    public ArrayList<Settler> slist = new ArrayList<Settler>();
+    public ArrayList<T>
 	public void AddAsteroids() throws IOException
 	{
 		String enter;
@@ -18,11 +24,8 @@ public class Sun {
         }
         for(int i =1;i<num;i++)//ID:A01~AXX
         {
-
-           if(i<10)
-        	   Asteroid.add(new Asteroids("A"+"0"+Integer.toString(i)));
-           else if(i>=10)
-        	   Asteroid.add(new Asteroids("A"+Integer.toString(i)));
+            System.out.println(num+" asteroids have added to game");
+            Asteroid.add(new Asteroids(i));
         }
         
 	}

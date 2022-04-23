@@ -1,4 +1,4 @@
 package project.lab;
 
-public class Carbon {
+public class Carbon extends Resource{
 }
