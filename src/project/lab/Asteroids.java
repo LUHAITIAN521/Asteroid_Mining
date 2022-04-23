@@ -32,6 +32,7 @@ public int getdepth()
     }
 
     public  void createcore(){
+        
 
     }
 
@@ -60,6 +61,7 @@ public int getdepth()
     }
     
     public void LocalResource(Resource resource){
+        A1.(resource);
         
     }
 
@@ -128,6 +130,8 @@ public int getdepth()
 
     @Override
     public void AddNeighbor() {
+   
+      
 
     }
 

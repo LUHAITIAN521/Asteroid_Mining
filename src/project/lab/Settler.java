@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.lang.*;
 
 public class Settler extends Traveler {
+    int ucount = 0;
+    int icount =0;
+    int ccount = 0;
+    int wcount =0;
+    int count = ucount+icount+ccount+wcount;
     Sun sun = new Sun();
     Asteroids asteroids = new Asteroids();
     ArrayList<String> resources = new ArrayList<String>();
@@ -24,8 +29,12 @@ public class Settler extends Traveler {
 
     public void Build_robot(){
         Settler s = new Settler();
-        s.checkresource();//to check whether the resources  for building robots are adequate
+        if(icount>=1&&ccount>=1&&ucount>=1){
         game.AddRobot();
+        }
+        else{
+            System.out.println("the resources is not enough");
+        }
     }
 
      public void Mine(Asteroids a) throws IOException
@@ -40,26 +49,41 @@ public class Settler extends Traveler {
 	 }
     public void DropResource(Resource r)
 	 {
+         count--;
+         ucount--;
          Resource resource = new Resource();
 		 UnitTest.methodTest(" Settler.DropResource()");
 		 asteroids.LocalResource(resource);
 		 UnitTest.TestEnd(" Settler.DropResource()");
 	 }
     private ArrayList<String> CarryResource() {
+        count++;
+        ucount++;
         UnitTest.methodTest("Settler.CarryResource()");
         UnitTest.TestEnd("Settler.CarryResource()");
         return resources;
     }
     public void checkresource(){
+        if(count>10){
+            System.out.println("settlers can not carry so many resources");
+        else(){
+
+        }
+        }
     	
     }
     public void Build_TP_Gate(){
-        checkresource();//check wether the resources for building TP_Gates are enough.
-        TP_GATE t1=new TP_GATE();//create the first gate
-        TP_GATE t2=new TP_GATE();//create the second gate
+         
+        if(icount>=2&&wcount>=1&&ucount>=1){
+        TP_GATE G1=new TP_GATE();//create the first gate
+        TP_GATE G2=new TP_GATE();//create the second gate
+        
         UnitTest.methodTest("Build_TP_Gate");
-        t1.paired(t2);// two TP_Gates consist of a pair, TP_Gates must be used in pairs to transfer travelers.
-
+        G1.paired(G2);// two TP_Gates consist of a pair, TP_Gates must be used in pairs to transfer travelers.
+        }
+        else{
+            System.out.println("the resources is not enough");
+        }
     }
     public void place_TP_Gate(){
         UnitTest.methodTest("place_TP_Gate");

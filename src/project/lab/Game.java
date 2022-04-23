@@ -70,9 +70,42 @@ public class Game {
 	
   }
   public void AddRobot(){
-	  Robot robot = new Robot();
+	  {
+      String enter;
+          BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+          System.out.println("Please enter the number of settlers");
+          enter = br.readLine();
+          int num = Integer.parseInt(enter);
+       
+          for(int i =1;i<num;i++)//ID:R01~RXX
+          {
+  
+             if(i<10)
+               Robot.add(new robots("R"+"0"+Integer.toString(i)));
+             else if(i>=10)
+               Robot.add(new robots("R"+Integer.toString(i)));
+          }
+          
+    
   }
   public void AddTraveler(Traveler s){
+    {
+      String enter;
+          BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+          System.out.println("Please enter the number of settlers");
+          enter = br.readLine();
+          int num = Integer.parseInt(enter);
+       
+          for(int i =1;i<num;i++)//ID:S01~SXX
+          {
+  
+             if(i<10)
+               Settler.add(new settlers("S"+"0"+Integer.toString(i)));
+             else if(i>=10)
+               Settler.add(new settlers("S"+Integer.toString(i)));
+          }
+          
+    }
   }
   
   public void RemoveRobot(Robot r) {
