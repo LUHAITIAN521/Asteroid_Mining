@@ -10,8 +10,8 @@ public class Asteroids implements Neighbors{
     public int depth;
     private boolean closetosun=false;
     int aID;
-    int rnum;
-    ArrayList<Asteroids> Nei = new ArrayList<Asteroids>();
+    int rnum=1;
+//    ArrayList<Asteroids> Nei = new ArrayList<Asteroids>();
     Resource rs ;
     boolean Ishollow;
 Asteroids(int ID)
@@ -65,8 +65,6 @@ Asteroids(int ID)
 	{
         	return depth;
         }
-    Resource resource = new Resource();
-    Sun sun = new Sun();
 
     public void setClosetosun(){
         closetosun=true;
@@ -76,15 +74,18 @@ Asteroids(int ID)
 
     	return rs;
     }
+
+
+
     public int getaID(){
         return aID;
     }
-    public ArrayList<Asteroids> GetNeighbor(){
-    	int tid=getaID();
-        int nid1=tid+1;
-        int nid2=tid-1;
-        return Nei;
-    }
+//    public ArrayList<Asteroids> GetNeighbor(){
+//    	int tid=getaID();
+//        int nid1=tid+1;
+//        int nid2=tid-1;
+//        return Nei;
+//    }
 
     public void RemoveResources(){
         rnum--;
@@ -117,16 +118,27 @@ Asteroids(int ID)
 
 
     @Override
-    public void TransferTraveler() {
+    public void TransferTraveler()
+    {
+
+    }
+
+
+    @Override
+    public void RemoveNeighbor()
+    {
 
     }
 
     @Override
-    public void AddNeighbor() {
-    }
-
-    @Override
-    public void RemoveNeighbor() {
-
+    public boolean AddNeighbor(Asteroids a1,Asteroids a2){
+        if(a1.getaID()+1== a2.getaID()||a1.getaID()-1==a2.getaID())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

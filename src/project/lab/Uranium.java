@@ -1,7 +1,8 @@
 package project.lab;
 
 public class Uranium extends Resource{
-    Asteroids asteroids = new Asteroids();
+
+    public Uranium(){}
     public  void UnderTheSun(Asteroids asteroids) {
     	System.out.println("uranium close to the sun");
     	asteroids.explode();

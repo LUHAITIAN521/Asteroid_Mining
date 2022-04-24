@@ -5,24 +5,43 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Traveler {
-    Sun sun = new Sun();
-    TP_GATE tp = new TP_GATE();
-    TP_GATE tp2 = new TP_GATE();
-    Resource r= new Resource();
-    Game g = new Game();
-
+//    Game g = new Game();
+    Asteroids as = null;
     //the method is for both robot and settler
-    public void Travel(Asteroids a){
-
+    public void Travel(Asteroids a)
+    {
+        if(a.AddNeighbor(as,a)==true)
+        {
+            as=a;
+            System.out.println("successfully "+a.getaID());
+        }
+        else
+        {
+            System.out.println("Failed");
+        }
     }
-    
+
+    public void initialposition(Asteroids a)
+    {
+        as=a;
+    }
+
+
+    public  Asteroids getA(){
+        return as;
+    }
+
+    public void SetA(Asteroids a){
+        this.as=a;
+    }
     //the method is for both robot and settler
     //We need to check the depth of rock which should be larger than 0
     public void Drill(Asteroids a) throws IOException{
         if(a.getdepth()>0)
         {
             a.depth--;
-            System.out.println("Drill"+a.getaID()+"successfully");
+            System.out.println("Drill "+a.getaID()+" successfully");
+            System.out.println("remaining depth "+a.getdepth());
         }
         else
         {
@@ -51,19 +70,13 @@ public class Traveler {
         }
     }
 
-     public void GetAsteroid(Asteroids asteroids){
+     public void GetAsteroid(Asteroids a)
+     {
 
      }
 
      public void ChangeAsteroid(Asteroids asteroids){
 
      }
-     public void useTP_Gate(Traveler traveler){
 
-         GetAsteroid(new Asteroids());
-         tp.paired(tp2);
-         Travel();
-         RemoverTraveler(traveler);
-         g.AddTraveler(traveler);
-    }
 }
