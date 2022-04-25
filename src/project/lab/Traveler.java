@@ -3,9 +3,10 @@ package project.lab;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Objects;
 
 public class Traveler {
-//    Game g = new Game();
+    Game g = new Game();
     Asteroids as = null;
     //the method is for both robot and settler
     public void Travel(Asteroids a)
@@ -19,6 +20,12 @@ public class Traveler {
         {
             System.out.println("Failed");
         }
+    }
+
+    public void TP_Travel(Asteroids a)
+    {
+        as=a;
+        System.out.println("successfully "+a.getaID());
     }
 
     public void initialposition(Asteroids a)
@@ -59,7 +66,7 @@ public class Traveler {
      public boolean Avoidance(Asteroids a) throws IOException{
         if(a.getdepth()==0&&a.Ishollow==true)
         {
-            System.out.println("Hiden");
+            System.out.println(this.getClass().getSimpleName()+" Hiden");
             return  true;
 
         }
@@ -78,5 +85,19 @@ public class Traveler {
      public void ChangeAsteroid(Asteroids asteroids){
 
      }
+
+    public void useTP_Gate(TP_GATE t)
+    {
+        for(int i=0;i<g.tlist.size();i++)
+        {
+            if(g.tlist.indexOf(t)!=i)
+            {
+                if(Objects.equals(t.GetID(), g.tlist.get(i).GetID()))
+                {
+                    TP_Travel(g.tlist.get(i).GetA());
+                }
+            }
+        }
+    }
 
 }

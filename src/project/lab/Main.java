@@ -12,11 +12,11 @@ public class Main {
 			s.initialposition(s.g.Asteroid.get(0));
 //			Settler st=s.g.slist.get(0);
 			String enter = "0";
-			s.wcount=10;
-			s.icount=10;
-			s.ccount=10;
-			s.ucount=10;
-			s.count=1;
+//			s.wcount=10;
+//			s.icount=10;
+//			s.ccount=10;
+//			s.ucount=10;
+//			s.count=1;
 		while(!enter.equals("15"))
 		{
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,16 +27,16 @@ public class Main {
 			System.out.println("2:Setter drill");
 			System.out.println("3:settler mine");
 			System.out.println("4:settler drop resource");
-			System.out.println("5:Build robot");
+			System.out.println("5:Build robot(currently only support one robot)");
 			System.out.println("6:Robot moves");
 			System.out.println("7:Robot drill");
 			System.out.println("8:Build TP_GATE");
 			System.out.println("9:Place TP_GATE");
 			System.out.println("10:Settler use TP-Gate");
-			System.out.println("11:Robot use TP-Gate");
+//			System.out.println("11:Robot use TP-Gate");
 			System.out.println("12:Build Space-station");
-			System.out.println("13:Robot hide");
-			System.out.println("14:Settler hide");
+			System.out.println("13:Robot hide(you fully drilled and mined the asteroid)");
+			System.out.println("14:Settler hide(you fully drilled and mined the asteroid)");
 			System.out.println("15:EndTest");
 
 			while(true)
@@ -73,14 +73,19 @@ public class Main {
 
 					case 5:
 						s.Build_robot();
+						s.g.rlist.get(0).initialposition(s.getA());
 						break;
 
 					case 6:
-
+						System.out.println("Which asteroid your robot want to travel(Neighbors are asteroid's ID +/- 1)");
+						BufferedReader br5 = new BufferedReader(new InputStreamReader(System.in));
+						String enter5 = br5.readLine();
+						int n3 = Integer.parseInt(enter5);
+						s.g.rlist.get(0).Travel(s.g.Asteroid.get(n3));
 						break;
 
 					case 7:
-
+						s.g.rlist.get(0).Drill(s.g.rlist.get(0).getA());
 						break;
 
 					case 8:
@@ -106,7 +111,11 @@ public class Main {
 						break;
 
 					case 11:
-
+//						System.out.println("Which gate do you want to use?");
+//						BufferedReader br6 = new BufferedReader(new InputStreamReader(System.in));
+//						String enter6 = br6.readLine();
+//						int n4 = Integer.parseInt(enter6);
+//						s.g.rlist.get(0).useTP_Gate(s.g.tlist.get(n4));
 						break;
 
 					case 12:
@@ -114,7 +123,7 @@ public class Main {
 						break;
 
 					case 13:
-
+						s.g.rlist.get(0).Avoidance(s.g.rlist.get(0).getA());
 						break;
 
 					case 14:
@@ -124,6 +133,7 @@ public class Main {
 
 					default:
 						System.out.println("TestEnd");
+						System.exit(0);
 
 				}
 			}

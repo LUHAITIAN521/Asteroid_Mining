@@ -19,7 +19,7 @@ public class Settler extends Traveler {
     Asteroids as =null;
     String[] tpusedid= new String[10];
 //    ArrayList<Resource> resources = new ArrayList<Resource>();
-    Game g = new Game();
+//    Game g = new Game();
     int tpcount=0;
      Settler(String n){
          name=n;
@@ -99,7 +99,7 @@ public class Settler extends Traveler {
 
     public void Build_robot() throws IOException {
         if(icount>=1&&ccount>=1&&ucount>=1){
-            Robot r1=new Robot();
+              Robot r1=new Robot();
             g.rlist.add(r1);
         icount--;
         ccount--;
@@ -286,13 +286,14 @@ public class Settler extends Traveler {
     {
         tpGate.SetA(a);
         tpcount--;
+        System.out.println("Successfully place "+ tpGate.GetID()+g.tlist.indexOf(tpGate));
     }
     public void AddNeighbor(){
     	
     }
 
     public void die(){
-        g.enggame();//Game over.
+        g.enggame();//Game over.????
     }
 
 //    public void Avoidance() throws IOException{
@@ -310,17 +311,5 @@ public class Settler extends Traveler {
 //        }
 //    }
 
-    public void useTP_Gate(TP_GATE t)
-    {
-        for(int i=0;i<g.tlist.size();i++)
-        {
-            if(g.tlist.indexOf(t)!=i)
-            {
-                if(Objects.equals(t.GetID(), g.tlist.get(i).GetID()))
-                {
-                    as=g.tlist.get(i).GetA();
-                }
-            }
-        }
-    }
+
 }
